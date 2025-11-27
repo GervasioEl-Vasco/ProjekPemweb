@@ -3,7 +3,6 @@ header("Content-Type: application/json; charset=UTF-8");
 include_once 'config.php';
 include_once 'Game.php';
 
-// Check if user is logged in
 if(!isset($_SESSION['user_id'])) {
     http_response_code(401);
     echo json_encode(array("message" => "Access denied. Please login."));

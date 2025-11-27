@@ -1,10 +1,10 @@
 <?php
-// Function 1: Validate email
+// Function 1: Validasi email
 function validateEmail($email) {
     return filter_var($email, FILTER_VALIDATE_EMAIL);
 }
 
-// Function 2: Sanitize input
+// Function 2: Sanitasi input
 function sanitizeInput($data) {
     $data = trim($data);
     $data = stripslashes($data);
@@ -12,23 +12,23 @@ function sanitizeInput($data) {
     return $data;
 }
 
-// Function 3: Check if user is admin
+// Function 3: Cek jika user adalah admin
 function isAdmin() {
     return isset($_SESSION['account_type']) && $_SESSION['account_type'] == 'admin';
 }
 
-// Function 4: Check if user is moderator or admin
+// Function 4: Cek jika user adalah moderator atau admin
 function isStaff() {
     return isset($_SESSION['account_type']) && 
           ($_SESSION['account_type'] == 'admin' || $_SESSION['account_type'] == 'moderator');
 }
 
-// Function 5: Format price
+// Function 5: Format harga
 function formatPrice($price) {
     return '$' . number_format($price, 2);
 }
 
-// Function 6: Get user role name
+// Function 6: Dapatkan nama peran pengguna
 function getRoleName($role) {
     $roles = [
         'player' => 'Player',
